@@ -1,0 +1,41 @@
+{
+  "name": "natrailtracker",
+  "version": "1.0.0",
+  "description": "National Rail tracking app",
+  "entry": "./src/nationalrail_delay_tracking.js",
+  "output": "./build/main.js",
+  "scripts": {
+    "start": "npm run build && node ./build/main.js",
+    "build": "webpack --config webpack.server.config.js $npm_package_entry --output $npm_package_output --mode development --progress --profile --colors",
+    "build-prod": "webpack --config webpack.server.config.js $npm_package_entry --output $npm_package_output --mode production --progress --profile --colors"
+  },
+  "author": "",
+  "license": "Mine",
+  "dependencies": {
+    "aws-sdk": "^2.243.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-jsonschema": "^1.1.6",
+    "joi": "^13.1.2",
+    "mongodb": "^3.0.5",
+    "national-rail-darwin": "^1.0.6",
+    "qs": "^6.5.2",
+    "soap": "^0.11.4"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "engines": {
+    "node": ">=0.12.2"
+  }
+}
