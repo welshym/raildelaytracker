@@ -57,7 +57,7 @@ function monitorDepartures(fromStation, toStation) {
                 actualTimestamp: etdTimestampStr
               },
               trainId: result.GetStationBoardResult.trainServices.service[i].rsid,
-              delayDate: String(result.GetStationBoardResult.generatedAt).slice(0, 10)
+              delayDate: result.GetStationBoardResult.generatedAt.toISOString().slice(0, 10)
             };
             insertDeparture(serviceDetails);
           }
@@ -111,7 +111,7 @@ function monitorArrivals(fromStation, toStation) {
                 actualTimestamp: etaTimestampStr
               },
               trainId: result.GetStationBoardResult.trainServices.service[i].rsid,
-              delayDate: String(result.GetStationBoardResult.generatedAt).slice(0, 10),
+              delayDate: result.GetStationBoardResult.generatedAt.toISOString().slice(0, 10),
             };
             insertArrival(serviceDetails);
           }
